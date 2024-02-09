@@ -8,6 +8,7 @@ button.addEventListener('click', () => {
         const inputValue = input.value;
         console.log(inputValue);
         const listItem = document.createElement('li');
+        listItem.textContent = input.value;
         listItem.className = 'list-item';
 
         return list.appendChild(listItem);
