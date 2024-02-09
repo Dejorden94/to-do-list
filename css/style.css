@@ -15,6 +15,10 @@ body {
     height: 100vh;
 }
 
+h2 {
+    font-size: 240%;
+}
+
 main {
     background-color: aquamarine;
     height: 100%;
@@ -28,4 +32,18 @@ main {
     background-color: blanchedalmond;
     min-width: 30rem;
     min-height: 40rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.todo-container>h2 {
+
+    margin: 2rem auto;
+}
+
+.input-container {
+    width: 90%;
+    margin: 2rem auto;
 }
