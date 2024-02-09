@@ -4,10 +4,13 @@ const input = document.getElementById('js--input');
 const list = document.getElementById('js--todo-list');
 
 button.addEventListener('click', () => {
-    const inputValue = input.value;
-    console.log(inputValue);
-    input.value = '';
-    if (inputValue) {
+    if (input.value) {
+        const inputValue = input.value;
+        console.log(inputValue);
+        const listItem = document.createElement('li');
+        listItem.className = 'list-item';
 
+        return list.appendChild(listItem);
     }
+    return alert('Add an item!')
 });
