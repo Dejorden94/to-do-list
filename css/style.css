@@ -80,6 +80,10 @@ button {
     color: var(--light-color);
 }
 
+.no-items {
+    justify-content: center;
+}
+
 .todo-container>h2 {
     margin: 2rem auto;
 }
