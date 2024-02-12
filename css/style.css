@@ -10,7 +10,7 @@
     --primary-color: #3FBAC2;
     --secondairy-color: #D3D4D8;
     --light-color: #F5F5F5;
-    --dark_color: #4D606E;
+    --dark-color: #4D606E;
 }
 
 html {
@@ -27,19 +27,25 @@ body {
 
 h2 {
     font-size: 240%;
-    color: var(--light-color);
+    color: var(--secondairy-color);
     font-family: "Protest Strike", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 main {
-    background-color: var(--dark_color);
+    background-color: var(--dark-color);
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+button {
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 .todo-container {
@@ -57,11 +63,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .list-item {
+    cursor: pointer;
+    list-style: none;
     font-size: 160%;
-    color: var(--secondairy-color);
+    color: var(--light-color);
 }
 
 .todo-container>h2 {
