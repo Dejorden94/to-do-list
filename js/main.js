@@ -46,7 +46,7 @@ const listToDo = () => {
     let todos = ``
     if (data) {
         data.forEach((value, item) => { //Pak de waarde en de index van het object en maakr nieuwe li's aan.
-            todos += `<li>${value}&nbsp; &nbsp; &nbsp; <button onclick="removeData(${item})">Verwijder</button></li>`
+            todos += `<li class="list-item">${value}&nbsp; &nbsp; &nbsp; <button onclick="removeData(${item})">Verwijder</button></li>`
         });
         list.innerHTML = todos;// Set de list zijn html  gelijk aan de todos variable waarde
     }
