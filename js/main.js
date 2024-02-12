@@ -8,7 +8,7 @@ button.addEventListener('click', () => {
     if (inputData != '') {
         setToDoData(inputData);
         listToDo();
-        return
+        return input.value = '';
     }
     return alert('Voeg een item toe!')
 });
