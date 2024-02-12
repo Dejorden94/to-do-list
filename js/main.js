@@ -4,14 +4,22 @@ const input = document.getElementById('js--input');
 const list = document.getElementById('js--todo-list');
 
 button.addEventListener('click', () => {
-    if (input.value) {
-        const inputValue = input.value;
-        console.log(inputValue);
-        const listItem = document.createElement('li');
-        listItem.textContent = input.value;
-        listItem.className = 'list-item';
-
-        return list.appendChild(listItem);
+    const inputData = input.value;
+    if (inputData != '') {
+        return setToDoData(inputData);
+        // listToDo();
     }
-    return alert('Add an item!')
+    return alert('Voeg een item toe!')
 });
+
+let setToDoData = (input) => {
+    //Kijk of item al bestaad in de localStorage en stuurd truw wanneer dit zo is.
+    if (getData(input) != false) {
+        return alert('Item al toegevoegd aan todo');
+    }
+    let data = getData();
+    data = (data != false) ? data : []; //Als data niet bestaad, maak een lege aarray ndata aan.
+    data.push(input); //Voeg het ingevoerde item toe aan de data array.
+    data.JSON.stringify(data);
+    return localStorage.setItem('toDoList', data);
+};
