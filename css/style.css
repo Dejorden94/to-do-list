@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #3FBAC2;
+    --secondairy-color: #D3D4D8;
+    --light-color: #F5F5F5;
+    --dark_color: #4D606E;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -17,10 +24,11 @@ body {
 
 h2 {
     font-size: 240%;
+    color: var(--light-color);
 }
 
 main {
-    background-color: aquamarine;
+    background-color: var(--dark_color);
     height: 100%;
     width: 100%;
     display: flex;
@@ -29,7 +37,7 @@ main {
 }
 
 .todo-container {
-    background-color: blanchedalmond;
+    background-color: var(--primary-color);
     min-width: 30rem;
     min-height: 40rem;
     display: flex;
@@ -38,8 +46,16 @@ main {
     flex-direction: column;
 }
 
+.todo-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .list-item {
-    color: purple;
+    font-size: 160%;
+    color: var(--secondairy-color);
 }
 
 .todo-container>h2 {
