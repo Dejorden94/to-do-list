@@ -1,5 +1,6 @@
 const button = document.getElementById('js--submit');
 const input = document.getElementById('js--input');
+const clear = document.getElementById('js--clear-list');
 
 const list = document.getElementById('js--todo-list');
 
@@ -11,6 +12,11 @@ button.addEventListener('click', () => {
         return input.value = '';
     }
     return alert('Voeg een item toe!')
+});
+
+clear.addEventListener('click', () => {
+    localStorage.clear();
+    listToDo();
 });
 
 const setToDoData = (input) => {
@@ -44,13 +50,16 @@ const listToDo = () => {
     let list = document.getElementById('js--todo-list');
     let data = getData();
     let todos = ``
-    if (data) {
+    if (data && data.length > 0) {
         data.forEach((value, item) => { //Pak de waarde en de index van het object en maakr nieuwe li's aan.
             todos += `<li class="list-item">${value}&nbsp; &nbsp; &nbsp; <button onclick="removeData(${item})">Verwijder</button></li>`
         });
-        list.innerHTML = todos;// Set de list zijn html  gelijk aan de todos variable waarde
+    } else {
+        todos = `<li class="list-item no-items">Geen taken. Geniet van je dag!</li>`
     }
+    list.innerHTML = todos;// Set de list zijn html  gelijk aan de todos variable waarde
 }
+
 
 const removeData = (itemId) => {
     let data = getData(); //Haal data op uit local storage.
