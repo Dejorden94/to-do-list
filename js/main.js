@@ -6,8 +6,9 @@ const list = document.getElementById('js--todo-list');
 button.addEventListener('click', () => {
     const inputData = input.value;
     if (inputData != '') {
-        return setToDoData(inputData);
+        setToDoData(inputData);
         listToDo();
+        return
     }
     return alert('Voeg een item toe!')
 });
@@ -27,9 +28,10 @@ let setToDoData = (input) => {
 let getData = (input = null) => {
     let data = JSON.parse(localStorage.getItem('toDoList'));
     console.log(data);
-    if (data) {
-        if (input) {
+    if (data) { //Als er data is voor de onderstaande functie uit.
+        if (input) { //Als de gebruiker input heeft gegeven voor de onderstaande functie uit.
             if (data.indexOf(input) != -1) {
+                console.log(data.indexOf(input));
                 return data[input];
             } else {
                 return false;
@@ -51,3 +53,5 @@ let listToDo = () => {
         list.innerHTML = todos;
     }
 }
+
+listToDo();
